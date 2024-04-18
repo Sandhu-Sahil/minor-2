@@ -1,1 +1,1 @@
-String baseUrl = 'http://localhost:1337';
+String baseUrl = 'https://fucktech.xyz';

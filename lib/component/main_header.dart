@@ -1,4 +1,4 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
@@ -90,30 +90,30 @@ class MainHeader extends StatelessWidget {
             color: Colors.grey,),
           ),
           const SizedBox(width: 10),
-          // Badge(
-          //   badgeContent: const Text("1",
-          //   style: TextStyle(
-          //     color: Colors.white
-          //   ),),
-          //   badgeColor: Theme.of(context).primaryColor,
-          //   child: Container(
-          //     height: 46,
-          //     width: 46,
-          //     decoration: BoxDecoration(
-          //         color: Colors.white,
-          //         shape: BoxShape.circle,
-          //         boxShadow: <BoxShadow>[
-          //           BoxShadow(
-          //               color: Colors.grey.withOpacity(0.6),
-          //               blurRadius: 8
-          //           )
-          //         ]
-          //     ),
-          //     padding: const EdgeInsets.all(12),
-          //     child: const Icon(Icons.shopping_cart_outlined,
-          //       color: Colors.grey,),
-          //   ),
-          // ),
+          badges.Badge (
+            badgeContent: const Text("1",
+            style: TextStyle(
+              color: Colors.white
+            ),),
+            badgeColor: Theme.of(context).primaryColor,
+            child: Container(
+              height: 46,
+              width: 46,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.6),
+                        blurRadius: 8
+                    )
+                  ]
+              ),
+              padding: const EdgeInsets.all(12),
+              child: const Icon(Icons.shopping_cart_outlined,
+                color: Colors.grey,),
+            ),
+          ),
           const SizedBox(width: 5),
         ],
       ),

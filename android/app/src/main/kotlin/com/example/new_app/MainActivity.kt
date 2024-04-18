@@ -1,4 +1,4 @@
-package com.programmingnight.my_grocery.flutter_grocery_app
+package com.example.new_app
 
 import io.flutter.embedding.android.FlutterActivity
 
