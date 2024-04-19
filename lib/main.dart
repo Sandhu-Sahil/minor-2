@@ -9,9 +9,12 @@ import 'package:my_grocery/model/user.dart';
 import 'package:my_grocery/route/app_page.dart';
 import 'package:my_grocery/route/app_route.dart';
 import 'package:my_grocery/theme/app_theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initStorage(); // Initialize storage if required
+
   await Hive.initFlutter();
 
   //register adapters
@@ -23,6 +26,12 @@ void main() async {
   configLoading();
   runApp(const MyApp());
 }
+
+Future<void> initStorage() async {
+  SharedPreferences _ = await SharedPreferences.getInstance();
+  // Perform any initialization tasks here if needed
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -45,8 +45,8 @@ class AccountScreen extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const SignInScreen()));
               }),
-          buildAccountCard(title: "Notification", onClick: () {}),
-          buildAccountCard(title: "Settings", onClick: () {}),
+          // buildAccountCard(title: "Notification", onClick: () {}),
+          // buildAccountCard(title: "Settings", onClick: () {}),
           buildAccountCard(title: "About Us", onClick: () {}),
           buildAccountCard(title: "Terms of Service", onClick: () {}),
           Obx(() => buildAccountCard(title: authController.user.value==null?"Sign In":

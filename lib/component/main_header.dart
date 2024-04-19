@@ -2,6 +2,7 @@ import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
+import 'package:my_grocery/view/cart/cart.dart';
 
 class MainHeader extends StatelessWidget {
   const MainHeader({Key? key}) : super(key: key);
@@ -90,28 +91,37 @@ class MainHeader extends StatelessWidget {
             color: Colors.grey,),
           ),
           const SizedBox(width: 10),
-          badges.Badge (
-            badgeContent: const Text("1",
-            style: TextStyle(
-              color: Colors.white
-            ),),
-            badgeColor: Theme.of(context).primaryColor,
-            child: Container(
-              height: 46,
-              width: 46,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.grey.withOpacity(0.6),
-                        blurRadius: 8
-                    )
-                  ]
+          GestureDetector( // GestureDetector to detect taps on the cart button
+            onTap: () {
+              FocusScope.of(context).requestFocus(FocusNode());
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductCart()), // Replace CartPage with your cart page widget
+              );
+            },
+            child: badges.Badge (
+              badgeContent: const Text("1",
+              style: TextStyle(
+                color: Colors.white
+              ),),
+              badgeColor: Theme.of(context).primaryColor,
+              child: Container(
+                height: 46,
+                width: 46,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(0.6),
+                          blurRadius: 8
+                      )
+                    ]
+                ),
+                padding: const EdgeInsets.all(12),
+                child: const Icon(Icons.shopping_cart_outlined,
+                  color: Colors.grey,),
               ),
-              padding: const EdgeInsets.all(12),
-              child: const Icon(Icons.shopping_cart_outlined,
-                color: Colors.grey,),
             ),
           ),
           const SizedBox(width: 5),
